@@ -1,0 +1,103 @@
+/* Two columns side-by-side */
+.vj-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+  
+  .vj-workspace { gap: 1rem; }
+  
+  /* Containers */
+  .vj-palette, .vj-grid, .vj-timeline, .vj-line {
+    min-height: 180px;
+    border: 1px dashed #ddd;
+    border-radius: 10px;
+    padding: 10px;
+    display: grid;
+    gap: 8px;
+    background: #fafafa;
+  }
+  
+  .vj-palette { grid-template-columns: repeat(3, 1fr); }
+  .vj-grid    { grid-template-columns: repeat(3, 1fr); }
+  
+  .vj-palette-6 { grid-template-columns: repeat(6, 1fr); min-height: auto; }
+  .vj-timeline  { grid-template-columns: repeat(6, 1fr); min-height: auto; }
+  .vj-line      { grid-template-columns: repeat(6, 1fr); min-height: auto; }
+  
+  /* Base units */
+  .vj-cell, .vj-tile, .vj-slot, .vj-line-slot {
+    position: relative;
+    width: 100%;
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: 0 0 0 1px rgba(0,0,0,0.06) inset;
+    overflow: hidden;
+  }
+  
+  /* ====== Aspect-ratio control ======
+     We place a CSS variable --ar (height/width) on each container
+     (palette/grid/timeline/line). Padding uses that variable.
+  */
+  .vj-palette { --ar: 1; }
+  .vj-grid    { --ar: 1; }
+  .vj-timeline{ --ar: 1; }
+  .vj-line    { --ar: 1; }
+  
+  /* Palette tiles create the box via padding-top using --ar */
+  .vj-palette .vj-tile { padding-top: calc(var(--ar) * 100%); }
+  
+  /* Grid/Timeline/Line slots define the box; content is absolute fill */
+  .vj-grid .vj-cell,
+  .vj-timeline .vj-slot,
+  .vj-line .vj-line-slot { padding-top: calc(var(--ar) * 100%); }
+  
+  .vj-grid .vj-tile,
+  .vj-timeline .vj-video,
+  .vj-line .vj-token {
+    position: absolute; inset: 0; width: 100%; height: 100%; padding: 0;
+  }
+  
+  /* Media fill */
+  .vj-tile img, .vj-cell img, .vj-video video {
+    position: absolute; inset: 0;
+    width: 100%; height: 100%; object-fit: cover;
+    user-select: none; -webkit-user-drag: none;
+  }
+  
+  .vj-video video { border-radius: 12px; }
+  
+  /* 3D tokens (circular), still sized by the slot box */
+  .vj-token {
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 800; font-size: 1.1rem;
+    border-radius: 9999px;
+  }
+  
+  /* Drag feedback & correctness */
+  .vj-cell.drop-ok, .vj-slot.drop-ok, .vj-line-slot.drop-ok { outline: 2px dashed #7aa2f7; }
+  .vj-cell.correct, .vj-slot.correct, .vj-line-slot.correct { box-shadow: 0 0 0 2px #48c78e inset; }
+  .vj-cell.wrong,   .vj-slot.wrong,   .vj-line-slot.wrong   { box-shadow: 0 0 0 2px #f14668 inset; }
+  
+  /* Reference image */
+  .vj-figure img {
+    width: 100%; height: auto;
+    border-radius: 12px;
+    box-shadow: 0 0 0 1px rgba(0,0,0,0.06) inset;
+  }
+  
+  /* Draggable cursors */
+  .vj-tile[draggable="true"], .vj-token[draggable="true"], .vj-video[draggable="true"] { cursor: grab; }
+  .vj-tile:active, .vj-token:active, .vj-video:active { cursor: grabbing; }
+  
+
+  /* --- square corners, no rounding --- */
+.vj-cell, .vj-tile, .vj-slot, .vj-line-slot,
+.vj-video video, .vj-figure img {
+  border-radius: 0 !important;
+}
+
+
+/* 让 Palette 的每个 slot 自己决定方形尺寸；tile 绝对铺满 */
+.vj-p-slot { position: relative; width: 100%; padding-top: calc(var(--ar) * 100%); background: #fff; box-shadow: 0 0 0 1px rgba(0,0,0,0.06) inset; }
+.vj-p-slot > .vj-tile { position: absolute; inset: 0; width: 100%; height: 100%; }

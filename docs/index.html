@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Visual Jigsaw Post-Training Improves MLLMs">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Visual Jigsaw Post-Training Improves MLLMs</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+  <link rel="stylesheet" href="./static/css/vj_playground.css">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <!-- <link rel="icon" href="./static/images/favicon.svg"> -->
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+
+
+<section class="hero" style="margin-top: 1rem;">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Visual Jigsaw Post-Training Improves MLLMs</h1>
+          <!-- <h4 class="title is-4 publication-title"><span style="color: rgba(250, 66, 66, 0.988);">ICLR</span> 2026</h4> -->
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://penghao-wu.github.io/">Penghao Wu</a><sup>1</sup>,</span>
+            <span class="author-block">
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=mvY4rdIAAAAJ&hl=en">Yushan Zhang</a><sup>2</sup>,</span>
+            <span class="author-block">
+              <a href="https://paranioar.github.io/">Haiwen Diao</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://brianboli.com/">Bo Li</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://scholar.google.com.tw/citations?user=zdgKJXIAAAAJ&hl">Lewei Lu</a><sup>3</sup>,</span>
+            <span class="author-block">
+              <a href="https://liuziwei7.github.io//">Ziwei Liu</a><sup>1
+              
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>S-Lab, Nanyang Technological University,</span>
+            <span class="author-block"><sup>2</sup>Linköping University,</span>
+            <span class="author-block"><sup>3</sup>SenseTime Research</span>&nbsp;&nbsp;
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- <span class="link-block">
+                <a href="https://arxiv.org/pdf/2406.12275v2"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span> -->
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/penghao-wu/visual_jigsaw"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <!-- <span>Code</span> -->
+                  <span>Code</span>
+                  </a>
+              </span>
+              <!-- <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <p style="font-size:18px">🤗</p>
+                  </span>
+                  <span>Demo (Coming Soon)</span>
+                </a>
+              </span> -->
+              <span class="link-block">
+                <a href="https://huggingface.co/collections/craigwu/visual-jigsaw-68d92d6aca580f3dc7e3cf36"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <p style="font-size:18px">🤗</p>
+                  </span>
+                  <span>Model & Data</span>
+                </a>
+              </span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="abstract" class="section" style="margin-top:-4rem;">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          Reinforcement learning based post-training has recently emerged as a powerful paradigm for enhancing the alignment and reasoning capabilities of multimodal large language models (MLLMs). While <em>vision-centric</em> post-training is crucial for enhancing MLLMs' intrinsic understanding of visual signals, current post-training paradigms are predominantly <em>text-centric</em>, where dense visual inputs are only leveraged to extract sparse cues for text-based reasoning. There exist a few approaches in this direction, however, they often still rely on text as an intermediate mediator or introduce additional visual generative designs. In this work, we introduce <strong>Visual Jigsaw</strong>, a generic <em>self-supervised</em> post-training framework designed to strengthen visual understanding in MLLMs. Visual Jigsaw is formulated as a general ordering task: visual inputs are partitioned, shuffled, and the model must reconstruct the visual information by producing the correct permutation in natural language. This naturally aligns with reinforcement learning from verifiable rewards (RLVR), requires no additional visual generative components, and derives its supervisory signal automatically without any annotations. We instantiate Visual Jigsaw across three visual modalities, including images, videos, and 3D data. Extensive experiments demonstrate substantial improvements in fine-grained perception, temporal reasoning, and 3D spatial understanding. Our findings highlight the potential of self-supervised vision-centric tasks in post-training MLLMs and aim to inspire further research on vision-centric pretext designs.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- === Visual Jigsaw Playground === -->
+<section id="vj-playground" class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">Try Visual Jigsaw</h2>
+    <!-- Tabs -->
+    <div class="tabs is-centered is-toggle is-toggle-rounded is-medium mt-5">
+      <ul id="vj-tabs">
+        <li class="is-active" data-tab="image"><a>Image</a></li>
+        <li data-tab="video"><a>Video</a></li>
+        <li data-tab="view3d"><a>3D</a></li>
+      </ul>
+    </div>
+
+    <div class="box">
+      <!-- Controls -->
+      <div class="columns is-vcentered">
+        <div class="column is-8">
+          <div class="field is-grouped is-grouped-multiline">
+            <!-- Grid size only (upload removed) -->
+            <div class="control" data-for="image">
+              <div class="select">
+                <select id="vj-grid-size">
+                  <option value="3" selected>3×3</option>
+                  <option value="2">2×2</option>
+                  <option value="4">4×4</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Common -->
+            <div class="control"><button class="button is-light"   id="vj-shuffle">Shuffle</button></div>
+            <div class="control"><button class="button is-warning" id="vj-reset">Reset</button></div>
+            <div class="control"><button class="button is-primary" id="vj-check">Check</button></div>
+          </div>
+          <p class="is-size-6" id="vj-hint" style="display:none;"></p>
+        </div>
+        <div class="column is-4 has-text-right-desktop">
+          <span class="tag is-large is-dark" id="vj-score">Score: 0 / 0</span>
+        </div>
+      </div>
+
+      <!-- Panels -->
+      <div id="vj-panels">
+        <!-- Image: left palette, right grid -->
+        <div class="vj-panel" data-panel="image">
+          <!-- 提示信息 -->
+          <article class="message is-info">
+            <div class="message-body">
+              Drag tiles from the <b>Palette</b> to the <b>Grid</b>. Drop on a cell to place or swap. Click <b>Check</b> to score; <b>Reset</b> to restart.
+            </div>
+          </article>
+        
+          <div class="vj-split vj-workspace">
+            <div>
+              <h3 class="title is-6 mb-2">Palette</h3>
+              <div id="vj-palette" class="vj-palette"></div>
+            </div>
+            <div>
+              <h3 class="title is-6 mb-2">Grid</h3>
+              <div id="vj-grid" class="vj-grid"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Video: clips top → 6-slot timeline bottom -->
+        <div class="vj-panel is-hidden" data-panel="video">
+          <article class="message is-info">
+            <div class="message-body">Drag 6 clips (top) into the 6-slot timeline (bottom) in the correct order.</div>
+          </article>
+          <div class="vj-workspace mb-4">
+            <h3 class="title is-6 mb-2">Clips</h3>
+            <div id="vj-video-palette" class="vj-palette vj-palette-6"></div>
+          </div>
+          <div class="vj-workspace">
+            <h3 class="title is-6 mb-2">Timeline</h3>
+            <div id="vj-video-timeline" class="vj-timeline"></div>
+          </div>
+        </div>
+
+        <!-- 3D: reference left → tokens/line right -->
+        <div class="vj-panel is-hidden" data-panel="view3d">
+          <article class="message is-info">
+            <div class="message-body">Arrange six depth tokens from <b>near → far</b>. The image shows points 1–6.</div>
+          </article>
+          <div class="vj-split vj-workspace">
+            <div>
+              <h3 class="title is-6 mb-2">Reference Image</h3>
+              <div class="vj-figure"><img id="vj-3d-image" alt="3D reference"></div>
+            </div>
+            <div>
+              <h3 class="title is-6 mb-2">Depth Tokens</h3>
+              <div id="vj-3d-palette" class="vj-palette vj-palette-6"></div>
+              <h3 class="title is-6 mt-4 mb-2">Order (Near → Far)</h3>
+              <div id="vj-3d-line" class="vj-line"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> <!-- /box -->
+  </div>
+</section>
+
+<!-- scripts at page bottom -->
+<script src="./static/js/vj_playground.js"></script>
+<script>
+  VJPlayground.init({
+    // Set your local assets here:
+    imageSrc: 'static/visual_jigsaw/000000014038.jpg',      // local image for image jigsaw
+    threeDImage: 'static/visual_jigsaw/3D.png',
+    threeDCorrectOrder: [4, 5, 3, 1, 2, 6],
+  });
+
+  VJPlayground.loadVideoClips([
+    'static/visual_jigsaw/clip1.mp4',
+    'static/visual_jigsaw/clip2.mp4',
+    'static/visual_jigsaw/clip3.mp4',
+    'static/visual_jigsaw/clip4.mp4',
+    'static/visual_jigsaw/clip5.mp4',
+    'static/visual_jigsaw/clip6.mp4',
+  ]);
+</script>
+
+<section class="section" style="margin-top: -4rem;">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Methodology Overview</h2>
+        <div class="content has-text-centered">
+          <img src="./static/visual_jigsaw/overview.png"
+          class="interpolation-image"
+          alt="Interpolate start reference image."
+          style="width: 80%; height: auto;"/> 
+        </div>
+        <div class="content has-text-justified">
+          Visual Jigsaw framework is formulated as a general visual ordering problem. Given some data from a certain visual modality (image, video, or 3D), we derive a set of <i>K</i> jigsaw elements by applying a modality-specific partitioning rule, such as splitting an image into patches, segmenting a video into clips, or sampling points in a 3D scene. These elements are then shuffled, and the model is tasked with predicting their original structural arrangement. Formally, the model predicts a permutation of size <i>K</i> as a list of indices, which is then compared against the ground-truth permutation. We optimize this task using the GRPO algorithm.<br>
+
+          In the Image Jigsaw, an image is partitioned into non-overlapping patches, shuffled into a sequence, and the model is tasked with predicting the correct raster order. In the Video Jigsaw, a video is segmented into temporal clips, shuffled, and the model predicts their original chronological order. In the 3D Jigsaw, points with distinct depth values are sampled from an RGB-D image, shuffled and annotated in the RGB view, and the model is required to recover the correct depth order from nearest to farthest. Across all tasks, the policy model outputs an ordering that is compared against the ground truth, and a partial accuracy reward is assigned when only some elements are correctly ordered.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section" style="margin-top: -4rem;">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Experiments</h2>
+        <h3 class="title is-4 has-text-left">Image Jigsaw</h3>
+        <div class="content has-text-centered">
+          <img src="./static/visual_jigsaw/image_jigsaw_exp.png"
+          class="interpolation-image"
+          alt="Interpolate start reference image."
+          style="width: 80%; height: auto;"/> 
+        </div>
+        <div class="content has-text-justified">
+          Image Jigsaw consistently improves the vision-centric capabilities of MLLMs across three categories of vision-centric benchmarks including 1) Fine-grained perception & understanding, 2) Monocular spatial understanding, and 3) Compositional visual understanding. These results confirm that incorporating image jigsaw post-training significantly enhances MLLMs' perceptual grounding and fine-grained vision understanding beyond reasoning-centric post-training strategies. We attribute these improvements to the fact that solving image jigsaw requires the model to attend to local patch details, infer global spatial layouts, and reason about inter-patch relations, which directly benefits fine-grained, spatial, and compositional understanding.
+        </div>
+        <h3 class="title is-4 has-text-left">Video Jigsaw</h3>
+        <div class="content has-text-centered">
+          <img src="./static/visual_jigsaw/video_jigsaw_exp.png"
+          class="interpolation-image"
+          alt="Interpolate start reference image."
+          style="width: 80%; height: auto;"/> 
+        </div>
+        <div class="content has-text-justified">
+          Video Jigsaw brings consistent improvements across all video understanding benchmarks and frame settings. While our method enhances general video perception and comprehension, the gains are particularly pronounced on tasks requiring temporal-centric understanding and reasoning about temporal directionality (e.g. AoTBench). Furthermore, the strong gains on CVBench demonstrate improved cross-video understanding and reasoning. These results confirm that solving video jigsaw tasks encourages the model to better capture temporal continuity, understand relationships across videos, reason about directional consistency, and generalize to holistic and generalizable video understanding scenarios.
+        </div>
+        <h3 class="title is-4 has-text-left">3D Jigsaw</h3>
+        <div class="content has-text-centered">
+          <img src="./static/visual_jigsaw/3D_jigsaw_exp.png"
+          class="interpolation-image"
+          alt="Interpolate start reference image."
+          style="width: 80%; height: auto;"/> 
+        </div>
+        <div class="content has-text-justified">
+          3D Jigsaw achieves significant improvements across all benchmarks. Unsurprisingly, the largest gain is on DA-2K, a depth estimation benchmark that is directly related to our depth-ordering pre-training task. More importantly, we observe consistent improvements on a wide range of other tasks, including those with single-view (e.g. 3DSRBench, OminiSpatial), multi-view (e.g. ViewSpatial, All-Angles), and egocentric video inputs (e.g. VSI-Bench). These results demonstrate that our approach not only teaches the specific skill of depth ordering but also effectively strengthens the model's general ability to perceive and reason about 3D spatial structure.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{Visual_Jigsaw,
+  author    = {Wu, Penghao and Yushan, Zhang and Haiwen, Diao and Bo, Li and Lu, Lewei and Liu, Ziwei},
+  title     = {Visual Jigsaw Post-Training Improves MLLMs},
+  journal={arXiv preprint arXiv:2509},
+  year={2025}}
+</code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p> 
+            Contact: 
+            <a href="penghao001@e.ntu.edu.sg">penghao001@e.ntu.edu.sg</a><br>
+            This website is adapted from <a
+            href="https://github.com/nerfies/nerfies.github.io">Nerfies</a> under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
