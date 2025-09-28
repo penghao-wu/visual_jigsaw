@@ -41,6 +41,8 @@ The training scripts for Visual Jigsaw training are provided in `train_scripts`.
 
 ## Evaluation
 
+For evaluation, please see guidelines in `eval/eval.md`.
+
 ## License <a name="license"></a>
 
 This project is under the Apache-2.0 license. See [LICENSE](LICENSE) for details.
