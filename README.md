@@ -24,6 +24,8 @@ We release the following models trained with Visual Jigsaw from [Qwen2.5-VL-7B-I
 **[Visual Jigsaw Video 7B](https://huggingface.co/craigwu/visual_jigsaw_video_7B):** Qwen2.5-VL-7B-Instruct trained with video jigsaw  
 **[Visual Jigsaw 3D 7B](https://huggingface.co/craigwu/visual_jigsaw_3D_7B):** Qwen2.5-VL-7B-Instruct trained with 3D jigsaw  
 
+Our models are based on Qwen2.5-VL-7B-Instruct. You can use the same code as it for inference.
+
 ## Visual Jigsaw Training Data
 
 The training data for Visual Jigsaw can be downloaded at [visual_jigsaw_training_data](https://huggingface.co/datasets/craigwu/visual_jigsaw_training_data).
@@ -41,6 +43,7 @@ The training scripts for Visual Jigsaw training are provided in `train_scripts\`
 ## Evaluation
 
 For evaluation, please see guidelines in [eval.md](https://github.com/penghao-wu/visual_jigsaw/blob/main/eval/eval.md).
+
 
 ## License <a name="license"></a>
 
