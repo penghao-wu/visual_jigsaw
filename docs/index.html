@@ -170,6 +170,8 @@
           <div class="field is-grouped is-grouped-multiline">
             <!-- Grid size only (upload removed) -->
             <div class="control" data-for="image">
+              <input id="vj-upload" type="file" accept="image/*" style="display:none;">
+              <label for="vj-upload" class="button is-info">Upload Image</label>
               <div class="select">
                 <select id="vj-grid-size">
                   <option value="3" selected>3×3</option>
@@ -198,7 +200,7 @@
           <!-- 提示信息 -->
           <article class="message is-info">
             <div class="message-body">
-              Drag tiles from the <b>Palette</b> to the <b>Grid</b>. Drop on a cell to place or swap. Click <b>Check</b> to score; <b>Reset</b> to restart.
+              Drag tiles from the <b>Palette</b> to the <b>Grid</b>. Click <b>Check</b> to score; <b>Reset</b> to restart. You can also upload your own image.
             </div>
           </article>
         
