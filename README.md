@@ -4,9 +4,8 @@ Visual Jigsaw Post-Training Improves MLLMs</a></h1>
 <h5 align="center">
   
 [![Project Page](https://img.shields.io/badge/🌐%20Project-Page-blue.svg)](https://your-project-page-link)
-[![HF Dataset](https://img.shields.io/badge/🤗%20Dataset-purple.svg)](https://huggingface.co/datasets/your-username/your-dataset)
-[![HF Model](https://img.shields.io/badge/🤗%20Model-purple.svg)](https://huggingface.co/your-username/your-model)
-[![arXiv](https://img.shields.io/badge/arXiv-2509.21268-B31B1B.svg)](https://arxiv.org/abs/)
+[![HF](https://img.shields.io/badge/🤗%20HF_Collection-purple.svg)](https://huggingface.co/collections/craigwu/visual-jigsaw-68d92d6aca580f3dc7e3cf36)
+[![arXiv](https://img.shields.io/badge/arXiv-2509.xxxx-B31B1B.svg)](https://arxiv.org/abs/)
 <br>
 </h5> 
 
@@ -37,7 +36,7 @@ For training, you need to download the source data from the above source dataset
 
 ## Training
 
-The training scripts for Visual Jigsaw training are provided in `train_scripts`.
+The training scripts for Visual Jigsaw training are provided in `train_scripts\`.
 
 ## Evaluation
 
@@ -52,7 +51,7 @@ Please consider citing our paper if you find this project helpful for your resea
 
 ```bibtex
 @article{visual_jigsaw,
-  author    = {},
+  author    = {Wu, Penghao and Yushan, Zhang and Haiwen, Diao and Bo, Li and Lu, Lewei and Liu, Ziwei},
   title     = {Visual Jigsaw Post-Training Improves MLLMs},
   journal={arXiv preprint arXiv:2509},
   year={2025}}
