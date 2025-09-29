@@ -40,7 +40,7 @@ The training scripts for Visual Jigsaw training are provided in `train_scripts\`
 
 ## Evaluation
 
-For evaluation, please see guidelines in `eval/eval.md`.
+For evaluation, please see guidelines in [eval.md](https://github.com/penghao-wu/visual_jigsaw/blob/main/eval/eval.md).
 
 ## License <a name="license"></a>
 
