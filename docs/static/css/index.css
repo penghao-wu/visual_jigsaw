@@ -142,3 +142,49 @@ body {
 
 /* 可选：减少 box 与外部的间隔 */
 #vj-playground .box { margin-top: .5rem; }
+
+/* === Cyberpunk neon animated title without glow === */
+.vj-hero-title-cyber{
+  /* Colorful smooth letter animation */
+  background-image: linear-gradient(120deg,
+    #a41e61,  /* Neon pink */
+    #9e289e,  /* Neon magenta */
+    #7a45c9,  /* Deep purple */
+    #80c4db,  /* Neon cyan */
+    #5dd3bb,  /* Aqua green */
+    #e3ca66   /* Bright yellow */
+  );
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent; /* Safari */
+  color: transparent;
+
+  /* animated letter-to-letter sweep */
+  animation: vjCyberSweep 6s ease-in-out infinite;
+  letter-spacing: .5px;
+  font-weight: bold;  /* To make text more prominent */
+}
+
+/* Smooth color sweep */
+@keyframes vjCyberSweep{
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Dark mode: keep the colors bright */
+@media (prefers-color-scheme: dark){
+  .vj-hero-title-cyber{
+    background-image: linear-gradient(120deg,
+      #911453, #991699, #6214d7, #107799, #15b192, #d4c173);
+  }
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce){
+  .vj-hero-title-cyber{
+    animation: none;
+    background-position: 50% 50%;
+  }
+}
