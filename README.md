@@ -6,6 +6,7 @@ Visual Jigsaw Post-Training Improves MLLMs</a></h1>
 [![Project Page](https://img.shields.io/badge/🌐%20Project-Page-blue.svg)](https://penghao-wu.github.io/visual_jigsaw/)
 [![HF](https://img.shields.io/badge/🤗%20HF_Collection-purple.svg)](https://huggingface.co/collections/craigwu/visual-jigsaw-68d92d6aca580f3dc7e3cf36)
 [![arXiv](https://img.shields.io/badge/arXiv-2509.25190-B31B1B.svg)](https://arxiv.org/abs/2509.25190)
+[![Paper PDF](https://img.shields.io/badge/Paper-PDF-red.svg)](https://github.com/penghao-wu/visual_jigsaw/blob/main/Visual_Jigsaw.pdf)  
 <br>
 </h5> 
 
