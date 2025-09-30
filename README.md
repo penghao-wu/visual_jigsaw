@@ -1,4 +1,4 @@
-<h1 align="center"><a href="https://arxiv.org/" style="color:#9C276A">
+<h1 align="center"><a href="https://arxiv.org/abs/2509.25190" style="color:#9C276A">
 Visual Jigsaw Post-Training Improves MLLMs</a></h1>
 
 <h5 align="center">
