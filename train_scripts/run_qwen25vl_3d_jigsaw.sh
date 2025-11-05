@@ -58,9 +58,9 @@ python3 -m verl.trainer.main_ppo \
     trainer.val_before_train=False \
     trainer.n_gpus_per_node=8 \
     trainer.nnodes=1 \
-    trainer.save_freq=4000 \
+    trainer.save_freq=40 \
     trainer.max_actor_ckpt_to_keep=3 \
-    trainer.test_freq=20 \
+    trainer.test_freq=4000 \
     trainer.project_name=${PROJECT_NAME} \
     trainer.experiment_name=${EXPERIMENT_NAME} \
     trainer.default_local_dir=${SAVE_CHECKPOINT_DIR}/${EXPERIMENT_NAME} \
