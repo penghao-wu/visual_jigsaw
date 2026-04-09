@@ -108,9 +108,6 @@ if __name__ == "__main__":
         data[i]['pair_index'] = i//2
         data[i+1]['pair_index'] = i//2
 
-    random.seed(42)
-    random.shuffle(data)
-
     # Split data for distributed evaluation
     per_rank_data = len(data) // world_size
     start_idx = rank * per_rank_data
